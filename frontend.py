@@ -430,7 +430,8 @@ def bookstore():
     window.geometry('750x750')
     window.wm_title("BookStore",)
     imag=Image.open("bookstore.jpg")
-    imag=imag.resize((750,750),Image.ANTIALIAS)
+    imag=imag.resize((750,750),Image.LANCZOS)
+    
     photo=ImageTk.PhotoImage(imag)
     lab=Label(image=photo)
 
@@ -518,13 +519,10 @@ root1=Tk()
 root1.geometry('700x750')
 root1.wm_title("Welcome",)
 imag1=Image.open("welcome.jpg")
-imag1=imag1.resize((700,750),Image.ANTIALIAS)
+imag1 = imag1.resize((700, 750), Image.LANCZOS)
 photo1=ImageTk.PhotoImage(imag1)
 lab=Label(image=photo1)
 lab.place(x=0,y=0,relwidth=1,relheight=1)
 b1=Button(root1,text="WELCOME", width=20,command=bookstore)
 b1.place(x=510,y=400)
 root1.mainloop()
-    
-
-
